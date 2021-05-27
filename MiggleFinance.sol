@@ -26,7 +26,7 @@ contract Token {
        return true;
     }
     
-    function transferfrom(address from, address to, uint value) public returns(bool) { {
+    function transferfrom(address from, address to, uint value) public returns(bool) {
         require(balanceOf(from) >= value, 'balance too low');
         require(allowance[from][msg.sender] >= value, 'allowance too low');
         balances[to] += value;
@@ -35,7 +35,7 @@ contract Token {
         return true;
     }
     
-    function approve(address spender, uint value) public return(bool) {
+    function approve(address spender, uint value) public returns(bool) {
         allowance[msg.sender][spender] = value;
         emit Approval(msg.sender, spender, value);
         return true;
